@@ -1,3 +1,15 @@
+ion-header {
+  --background: var(--ion-background-color, #E3E3E3);
+}
+
+ion-toolbar {
+  --background: var(--ion-background-color, #232325);
+  color: var(--ion-text-color, #e3e3e3);
+}
+ion-content {
+  --background: var(--ion-background-color, #0B3D2E);
+}
+
 ion-menu-button {
   color: var(--ion-color-primary);
 }
@@ -19,7 +31,7 @@ ion-menu-button {
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: #757575;
   margin: 0;
 }
 
