@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
     <ion-title>Growth Investimentos</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +11,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container" style="text-align: center; padding: 20px;">
+    <!-- Logo do app -->
+    <img src="assets/img/icon-only.png" alt="Logo Growth Investimentos" style="width: 250px; margin-bottom: 20px;">
+
+    <!-- Formulário de login -->
+    <ion-item lines="none" style="--ion-item-background: transparent;">
+      <ion-label position="stacked">E-mail/CNPJ</ion-label>
+      <ion-input type="text" placeholder="Digite seu e-mail ou CNPJ"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" style="--ion-item-background: transparent;">
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input type="password" placeholder="Digite sua senha"></ion-input>
+    </ion-item>
+
+    <!-- Botões -->
+    <ion-button expand="block" style="margin-top: 20px;">Entrar</ion-button>
+    <ion-button expand="block" fill="outline" style="margin-top: 10px;">Criar Conta</ion-button>
   </div>
 </ion-content>
