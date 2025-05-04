@@ -2,20 +2,25 @@ ion-content {
   --background: linear-gradient(170deg, #42513e , #0B3D2E , #022225);
 }
 
-ion-list {
-  --background: var(--ion-background-color, #0b3d2e00);
-}
-
 ion-list-header{
-  --color: var(--ion-text-color, #e3e3e3);
+  --color: var(--ion-text-color);
 }
 
 ion-item{
-  --background: var(--ion-background-color, #0b3d2e00);
-  --color: var(--ion-text-color, #e3e3e3);
+  --background:  #0b3d2e00;
+  --color: var(--ion-text-color);
 }
 #inbox-list {
-  background: var(--ion-background-color, #0b3d2e00);
+  background:  #0b3d2e00;
+}
+#Contas {
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #045D56;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(3px); 
+  color: var(--ion-text-color); 
 }
 
 ion-menu.md ion-content {

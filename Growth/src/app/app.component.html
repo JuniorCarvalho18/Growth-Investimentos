@@ -6,6 +6,18 @@
           <ion-list-header>Menu</ion-list-header>
           <br>
 
+          <div id="Contas" style="text-align: center;">
+            <ion-label style="display: flex; font-size: 14px;text-align: left;font-weight: bold;color: var(--ion-text-color); margin-bottom: 10px;">Saldo</ion-label>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 20px; font-weight: bold;">R$ ****</span>
+              <ion-icon name="eye-outline" style="cursor: pointer;"></ion-icon>
+            </div>
+            <div style="display:flex; margin-top: 10px; text-align: left;">
+              <ion-icon name="document-text-outline" style="vertical-align: middle;"></ion-icon>
+              <span style="cursor: pointer;">Histórico</span>
+            </div>
+          </div>
+
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
               <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">

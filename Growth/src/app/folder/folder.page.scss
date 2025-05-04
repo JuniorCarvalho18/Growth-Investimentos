@@ -2,31 +2,14 @@ ion-header {
   text-align: center;
 }
 
-ion-toolbar {
-  --background: #232325;
-  color: #e3e3e3;
-}
-ion-content {
-  color: var(--ion-text-color, #e3e3e3);
-}
-ion-item {
-  color: var(--ion-text-color, #e3e3e3);
-}
-ion-input {
-  border: 1px solid #e3e3e3b1;
-  --padding-start: 10px;
-  border-radius: 5px;
-  margin-top: 15px; 
-  margin-bottom: 15px; 
-}
-ion-button {
-  --border: none;
-  --border-radius: 8px;
-  font-weight: bold;
-}
 #Entrar {
   --background: #e3e3e3; /* Fundo do botão Entrar */
   --color: var(--ion-background-color); /* Cor da letra (mesma cor do fundo do botão Criar) */
+}
+#Entrar:hover {
+  transition: 300ms;
+  --background: var(--dourado);
+  --color: var(--ion-text-color);
 }
 #Criar {
   --background: #232325; /* Fundo do botão Criar (mesma cor do fundo da toolbar) */

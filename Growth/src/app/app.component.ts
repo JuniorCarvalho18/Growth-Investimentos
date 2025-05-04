@@ -8,9 +8,9 @@ import { SplashScreen } from '@capacitor/splash-screen';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: '/folder/home', icon: 'home' },
-    { title: 'Marketplace', url: '/folder/marketplace', icon: 'bag' },
-    { title: 'Configurações', url: '/folder/configuracoes', icon: 'settings' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Marketplace', url: '/marketplace', icon: 'bag' },
+    { title: 'Configurações', url: '/configuracoes', icon: 'settings' },
   ];
   constructor() {
     this.ShowSplash();

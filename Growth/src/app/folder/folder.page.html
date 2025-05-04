@@ -5,11 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
 
   <div id="container" style="text-align: center; padding: 20px;">
     <!-- Logo do app -->
@@ -28,6 +24,6 @@
 
     <!-- Botões -->
     <ion-button id="Entrar" expand="block" style="margin-top: 20px;">Entrar</ion-button>
-    <ion-button id="Criar" expand="block" fill="outline" style="margin-top: 10px;">Criar Conta</ion-button>
+    <ion-button id="Criar" expand="block" fill="outline" style="margin-top: 10px;" (click)="add()">Criar Conta</ion-button>
   </div>
 </ion-content>
