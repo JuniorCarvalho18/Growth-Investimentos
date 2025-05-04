@@ -22,7 +22,13 @@ ion-item{
   backdrop-filter: blur(3px); 
   color: var(--ion-text-color); 
 }
-
+#Historico {
+  width: min-content;
+  padding: 5px;
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(3px); 
+}
 ion-menu.md ion-content {
   --padding-start: 8px;
   --padding-end: 8px;
