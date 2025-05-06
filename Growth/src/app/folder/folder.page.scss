@@ -1,5 +1,5 @@
 ion-content{
-  --background:url(../../../assets/icon-background.png);
+  --background: url(../../../assets/icon-background.png);
 }
 
 ion-header {
@@ -7,8 +7,8 @@ ion-header {
 }
 
 #Entrar {
-  --background: #e3e3e3; /* Fundo do botão Entrar */
-  --color: #045D56; /* Cor da letra (mesma cor do fundo do botão Criar) */
+  --background: #e3e3e3; 
+  --color: #045D56; 
 }
 #Entrar:hover {
   transition: 300ms;
@@ -16,8 +16,8 @@ ion-header {
   --color: var(--ion-text-color);
 }
 #Criar {
-  --background: #232325; /* Fundo do botão Criar (mesma cor do fundo da toolbar) */
-  --color: #e3e3e3; /* Cor da letra (mesma cor do fundo do botão Entrar) */
+  --background: #232325;
+  --color: #e3e3e3; 
   border: 1px solid #e3e3e3b1;
   border-radius: 8px;
 }
