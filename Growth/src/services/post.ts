@@ -16,6 +16,6 @@ headers: new HttpHeaders({'Content-Type' : 'application/json'})
 }
 
 let url = this.server + api;
-return this.http.post(url, JSON.stringify(dados), httpOptions).map(res => res);
+return this.http.post(url, JSON.stringify(dados), httpOptions).pipe(res => res);
 }
 }
