@@ -1,3 +1,6 @@
+ion-content{
+  --background:url(../../../assets/icon-background.png);
+}
 
 ion-header {
   text-align: center;
@@ -5,7 +8,7 @@ ion-header {
 
 #Entrar {
   --background: #e3e3e3; /* Fundo do botão Entrar */
-  --color: var(--ion-background-color); /* Cor da letra (mesma cor do fundo do botão Criar) */
+  --color: #045D56; /* Cor da letra (mesma cor do fundo do botão Criar) */
 }
 #Entrar:hover {
   transition: 300ms;

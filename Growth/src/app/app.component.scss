@@ -1,17 +1,21 @@
-ion-content {
-  --background: linear-gradient(170deg, #42513e , #0B3D2E , #022225);
+ion-content{
+  --background:url(../../assets/icon-background.png);
 }
 
 ion-list-header{
   --color: var(--ion-text-color);
 }
-
 ion-item{
   --background:  #0b3d2e00;
   --color: var(--ion-text-color);
 }
 #inbox-list {
   background:  #0b3d2e00;
+}
+#icone{
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 5px;
+  border-radius: 50%;
 }
 #Contas {
   padding: 15px;
@@ -81,9 +85,8 @@ ion-menu.md ion-item.selected {
 }
 
 ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+  color: #045D56;
 }
-
 ion-menu.md ion-item ion-icon {
   color: #6e6e6e;
 }
