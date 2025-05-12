@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Router } from '@angular/router';
-
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,9 +14,26 @@ export class AppComponent {
     { title: 'Marketplace', url: '/marketplace', icon: 'bag' },
     { title: 'Configurações', url: '/configuracoes', icon: 'settings' },
   ];
+  
+  isContasAtivo = false;
+  isHistoricoAtivo = false;
+
 
   constructor(private router: Router) {
     this.ShowSplash();
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        // Atualiza o estado de isContasAtivo com base na rota atual
+        this.isContasAtivo = event.url === '/saldo';
+      });
+      this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        // Atualiza o estado de isContasAtivo com base na rota atual
+        this.isHistoricoAtivo = event.url === '/historico';
+      });
   }
 
   async ShowSplash() {
@@ -25,14 +42,23 @@ export class AppComponent {
       showDuration: 4000,
     });
   }
-
-  navigateToSaldo(event: Event) {
-    event.stopPropagation(); 
-    this.router.navigate(['/saldo']);
-  }
   
-  navigateToHistorico(event: Event) {
-    event.stopPropagation(); 
+
+  async toggleContas(event: Event) {
+    if (this.isContasAtivo) {
+      return;
+    }
+
+    event.stopPropagation();
+    await this.router.navigate(['/saldo']);
+  }
+
+  async navigateToHistorico(event: Event) {
+    if (this.isHistoricoAtivo) {
+      return;
+    }
+    
+    event.stopPropagation();
     this.router.navigate(['/historico']);
   }
 }

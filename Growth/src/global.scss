@@ -28,8 +28,8 @@
     --border-radius: 8px;
     font-weight: bold;
   }
-  ion-button:hover {
-    transition: 300ms;
+  ion-button:active {
+    transition: 100ms;
     transform: scale(1.02);
     --background: var(--dourado);
     --color: var(--ion-text-color);

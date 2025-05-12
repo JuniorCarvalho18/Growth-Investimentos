@@ -26,7 +26,7 @@ ion-item{
   backdrop-filter: blur(2px); 
   color: var(--ion-text-color); 
 }
-#Contas:hover {
+#Contas.ativo {
   transition: 300ms;
   transform: scale(1.01);
   box-shadow: rgba(227, 227, 227, 0.2) 0px 0px 10px ;
@@ -40,7 +40,7 @@ ion-item{
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(3px); 
 }
-#Historico:hover {
+#Historico.ativo {
   transition: 300ms;
   transform: scale(1.1);
   border: 1px solid rgba(227, 227, 227, 0.8);

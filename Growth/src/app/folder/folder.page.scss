@@ -10,8 +10,8 @@ ion-header {
   --background: #e3e3e3; 
   --color: #045D56; 
 }
-#Entrar:hover {
-  transition: 300ms;
+#Entrar:active {
+  transition: 100ms;
   --background: var(--dourado);
   --color: var(--ion-text-color);
 }
