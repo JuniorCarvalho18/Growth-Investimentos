@@ -1,0 +1,59 @@
+div {
+    margin: 20px;
+    border: 1px solid rgba(227, 227, 227, 0.6);
+    border-radius: 8px;
+    color: var(ion-text-color);
+}
+
+.section-title {
+    margin: 20px 16px 10px; /* Margem superior e lateral */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.saldo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 100%;
+}
+
+.saldo-card {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.saldo-card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.saldo-valor {
+    font-size: 24px;
+    margin: 10px 0 0;
+}
+.resumo-cards {
+border: none;
+display: flex; 
+justify-content: space-between; 
+gap: 10px; 
+}
+.resumo-card {
+    width: 100%;
+    flex: 1;
+    background-color: #00332e;
+    padding: 10px;
+    text-align: center;
+}
+
+.resumo-card h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+
+}
+
+.resumo-card p {
+    margin: 0;
+    font-size: 14px;
+}

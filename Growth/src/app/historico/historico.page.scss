@@ -1,0 +1,40 @@
+.historico-container {
+    padding: 16px;
+    color: var(ion-text-color); 
+  }
+  
+  .section-title {
+    margin: 20px 0 12px;
+    font-size: 18px;
+    color: var(ion-text-color);
+  }
+  
+  .historico-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004d40; 
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .historico-item ion-icon {
+    font-size: 24px;
+    color: var(--dourado); 
+    margin-right: 12px;
+  }
+  
+  .historico-item div {
+    flex: 1;
+  }
+  
+  .historico-item p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .historico-item span {
+    font-size: 12px;
+    color: var(ion-text-color); 
+  }

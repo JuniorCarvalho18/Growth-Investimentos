@@ -1,13 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Saldo</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Saldo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h3 class="section-title">Saldo Bancário</h3>
+  <div class="saldo-card">
+    <ion-label style="display: flex; font-size: 14px;text-align: left;color: var(--ion-text-color); margin-bottom: 10px;">Saldo</ion-label>
+    <ion-label class="saldo-valor">R$ ****</ion-label>
+  </div>
+
+  <h3 class="section-title">Saldo de Tokens</h3>
+  <div class="saldo-card">
+    <ion-label style="display: flex; font-size: 14px;text-align: left;color: var(--ion-text-color); margin-bottom: 10px;">Tokens</ion-label>
+    <ion-label class="saldo-valor">****</ion-label>
+  </div>
+
+  <h3 class="section-title">Resumo do Saldo de Tokens</h3>
+    <div class="resumo-cards">
+      <div class="resumo-card">
+          <h4>Saldo Total</h4>
+          <p>****</p>
+      </div>
+      <div class="resumo-card">
+          <h4>Investimentos em Andamento</h4>
+          <p></p>
+      </div>
+    </div>
 </ion-content>

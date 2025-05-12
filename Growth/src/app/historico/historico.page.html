@@ -1,13 +1,108 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Histórico</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Histórico</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="historico-container">
+    <!-- Lista de Depósitos Realizados -->
+    <h3 class="section-title">Lista de Depósitos Realizados</h3>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Investimento 20/12/2021</p>
+        <p>Valor: R$50</p>
+      </div>
+    </div>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Investimento 12/01/2022</p>
+        <p>Valor: R$70</p>
+      </div>
+    </div>
+
+    <!-- Lista de Investimentos Realizados -->
+    <h3 class="section-title">Lista de Investimentos Realizados</h3>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Investimento 1</p>
+        <p>Rendimento: R$50</p>
+      </div>
+      <span>10/10/2021</span>
+    </div>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Investimento 2</p>
+        <p>Rendimento: R$70</p>
+      </div>
+      <span>12/10/2021</span>
+    </div>
+
+    <!-- Lista de Resgates de Prêmios -->
+    <h3 class="section-title">Lista de Resgates de Prêmios</h3>
+    <div class="historico-item">
+      <ion-icon name="gift-outline"></ion-icon>
+      <div>
+        <p>Prêmio 1</p>
+        <p>Valor: R$30</p>
+      </div>
+      <span>15/10/2021</span>
+    </div>
+    <div class="historico-item">
+      <ion-icon name="gift-outline"></ion-icon>
+      <div>
+        <p>Prêmio 2</p>
+        <p>Valor: R$50</p>
+      </div>
+      <span>18/10/2021</span>
+    </div>
+
+    <!-- Histórico de Ganhos -->
+    <h3 class="section-title">Histórico de ganhos</h3>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Retorno pelo investimento</p>
+        <p>10 Tokens</p>
+      </div>
+      <span>Dec 2021</span>
+    </div>
+    <div class="historico-item">
+      <ion-icon name="flash-outline"></ion-icon>
+      <div>
+        <p>Tokens Bônus</p>
+        <p>20 Tokens</p>
+      </div>
+      <span>Jan 2022</span>
+    </div>
+
+    <!-- Histórico de Tokens -->
+    <h3 class="section-title">Histórico de Tokens</h3>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Token 1</p>
+        <p>Ganho: 100 tokens</p>
+      </div>
+      <span>05/10/2021</span>
+    </div>
+    <div class="historico-item">
+      <ion-icon name="cash-outline"></ion-icon>
+      <div>
+        <p>Token 2</p>
+        <p>Ganho: 200 tokens</p>
+      </div>
+      <span>08/10/2021</span>
+    </div>
+  </div>
 </ion-content>
