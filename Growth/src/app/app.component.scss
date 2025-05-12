@@ -26,12 +26,25 @@ ion-item{
   backdrop-filter: blur(2px); 
   color: var(--ion-text-color); 
 }
+#Contas:hover {
+  transition: 300ms;
+  transform: scale(1.01);
+  box-shadow: rgba(227, 227, 227, 0.2) 0px 0px 10px ;
+  border: 1px solid rgba(227, 227, 227, 0.6);
+  backdrop-filter: blur(5px); 
+}
 #Historico {
   width: min-content;
   padding: 5px;
   border-radius: 80px;
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(3px); 
+}
+#Historico:hover {
+  transition: 300ms;
+  transform: scale(1.1);
+  border: 1px solid rgba(227, 227, 227, 0.8);
+  backdrop-filter: blur(5px); 
 }
 ion-menu.md ion-content {
   --padding-start: 8px;
