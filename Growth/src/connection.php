@@ -7,7 +7,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header('Content-Type: application/json; charset=utf-8');
 
 //dados do banco no servidor local
-$banco = 'financeiro';
+$banco = 'GrowthDB';
 $host = 'localhost';
 $usuario = 'root';
 $senha = '';
