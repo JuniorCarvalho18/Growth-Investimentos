@@ -27,6 +27,22 @@ const routes: Routes = [
     path: 'historico',
     loadChildren: () => import('./historico/historico.module').then( m => m.HistoricoPageModule)
   },
+  {
+    path: 'configaracao',
+    loadChildren: () => import('./configaracao/configaracao.module').then( m => m.ConfigaracaoPageModule)
+  },
+  {
+    path: 'dev',
+    loadChildren: () => import('./dev/dev.module').then( m => m.DevPageModule)
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'verificacao',
+    loadChildren: () => import('./verificacao/verificacao.module').then( m => m.VerificacaoPageModule)
+  },
 ];
 
 @NgModule({

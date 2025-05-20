@@ -1,4 +1,9 @@
 -- create database growth;
+create table admin(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    maskid int(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
 
 create table usuario(
     id INT AUTO_INCREMENT PRIMARY KEY,

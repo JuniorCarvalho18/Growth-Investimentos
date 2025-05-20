@@ -10,7 +10,7 @@ header('Content-Type: application/json; charset=utf-8');
 $banco = 'GrowthDB';
 $host = 'localhost';
 $usuario = 'root';
-$senha = '';
+$senha = '0000';
 
 try {
     $pdo = new PDO("mysql:dbname=$banco; host=$host", "$usuario", "$senha");

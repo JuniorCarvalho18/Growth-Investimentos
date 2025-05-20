@@ -12,7 +12,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Marketplace', url: '/marketplace', icon: 'bag' },
-    { title: 'Configurações', url: '/configuracoes', icon: 'settings' },
+    { title: 'Configurações', url: '/configaracao', icon: 'settings' },
   ];
   
   isContasAtivo = false;
