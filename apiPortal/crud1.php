@@ -8,23 +8,27 @@ include_once('connection.php');
 // Decodifica o JSON recebido no corpo da requisição
 $postjson = json_decode(file_get_contents('php://input'), true);
 
+// Verifica se o JSON foi recebido corretamente
+if (!$postjson) {
+    echo json_encode(['success' => false, 'message' => 'Nenhum dado recebido']);
+    exit;
+}
+
 // Verifica se a requisição é para salvar
 if ($postjson['requisicao'] == 'salvar') {
-    // Criptografa a senha
-    $senha_crip = md5($postjson['senha']);
+            // Criptografa a senha
+        $senha_crip = md5($postjson['senha']);
 
-    // Prepara a query para inserir os dados
-    $query = $pdo->prepare("INSERT INTO usuarios (senha, nome, email, cnpj) 
-                            VALUES (:senha, :nome, :email, :cnpj)");
-    $query->bindValue(':senha', $senha_crip);
-    $query->bindValue(':nome', $postjson['nome']);
-    $query->bindValue(':email', $postjson['email']);
-    $query->bindValue(':cnpj', $postjson['cnpj']);
+        // Prepara a query para inserir os dados
+        $query = $pdo->prepare("INSERT INTO usuarios (senha, nome, email, cnpj) 
+                                VALUES (:senha, :nome, :email, :cnpj)");
+        $query->bindValue(':senha', $senha_crip);
+        $query->bindValue(':nome', $postjson['nome']);
+        $query->bindValue(':email', $postjson['email']);
+        $query->bindValue(':cnpj', $postjson['cnpj']);
+        $query->execute();
 
-    // Executa a query
-    $query->execute();
-
-    // Obtém o último ID inserido
+        // Obtém o último ID inserido
     $id = $pdo->lastInsertId();
 
     // Verifica se a query foi executada com sucesso
@@ -36,7 +40,7 @@ if ($postjson['requisicao'] == 'salvar') {
 
     // Retorna o resultado como JSON
     echo json_encode($result);
-}
+    }
 
 // Verifica se a requisição é para login
 if ($postjson['requisicao'] == 'login') {
