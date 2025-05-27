@@ -69,7 +69,7 @@ CREATE TABLE resgates (
 
 CREATE TABLE notificacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    usuarios_id INT NOT NULL,
+    usuario_id INT NOT NULL,
     tipo VARCHAR(50), 
     mensagem TEXT,
     data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
