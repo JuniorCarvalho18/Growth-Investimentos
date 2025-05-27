@@ -44,28 +44,22 @@ if ($postjson['requisicao'] == 'salvar') {
 
 // Verifica se a requisição é para login
 if ($postjson['requisicao'] == 'login') {
-    $senha_crip = md5($postjson['senha']); // Criptografa a senha
+    try {
+        $senha_crip = md5($postjson['senha']); // Criptografa a senha
 
-    // Verifica se o valor é um e-mail ou um CNPJ
-    if (filter_var($postjson['emailCnpj'], FILTER_VALIDATE_EMAIL)) {
-        // É um e-mail
-        $query = $pdo->prepare("SELECT * FROM usuario WHERE email = :emailCnpj AND senha = :senha");
-    } else {
-        // É um CNPJ
-        $query = $pdo->prepare("SELECT * FROM usuario WHERE cnpj = :emailCnpj AND senha = :senha");
+        // Prepara a query para verificar o login
+        $query = $pdo->prepare("SELECT * FROM usuarios WHERE (email = :emailCnpj OR cnpj = :emailCnpj) AND senha = :senha");
+        $query->bindValue(':emailCnpj', $postjson['emailCnpj']);
+        $query->bindValue(':senha', $senha_crip);
+        $query->execute();
+
+        if ($query->rowCount() > 0) {
+            echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'E-mail/CNPJ ou senha inválidos!']);
+        }
+    } catch (PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Erro no servidor: ' . $e->getMessage()]);
     }
-
-    $query->bindValue(':emailCnpj', $postjson['emailCnpj']);
-    $query->bindValue(':senha', $senha_crip);
-    $query->execute();
-
-    // Verifica se encontrou um usuário
-    if ($query->rowCount() > 0) {
-        $result = array('success' => true);
-    } else {
-        $result = array('success' => false);
-    }
-
-    echo json_encode($result);
 }
 ?>

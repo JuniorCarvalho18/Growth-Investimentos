@@ -30,7 +30,7 @@ export class FolderPage implements OnInit {
       alert('Por favor, preencha todos os campos!');
       return;
     }
-
+  
     // Envia os dados para o backend
     this.http.post('http://localhost/apiPortal/crud1.php', {
       requisicao: 'login',
@@ -41,8 +41,11 @@ export class FolderPage implements OnInit {
         alert('Login realizado com sucesso!');
         this.rota.navigate(['/home']); // Redireciona para a página inicial
       } else {
-        alert('E-mail/CNPJ ou senha inválidos!');
+        alert(response.message || 'E-mail/CNPJ ou senha inválidos!');
       }
+    }, (error) => {
+      console.error('Erro na requisição:', error);
+      alert('Erro ao conectar ao servidor. Tente novamente mais tarde.');
     });
   }
 
