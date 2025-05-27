@@ -13,6 +13,7 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Marketplace', url: '/marketplace', icon: 'bag' },
     { title: 'Configurações', url: '/configaracao', icon: 'settings' },
+    { title: 'Sair', url: '/folder/inbox', icon: 'log-out' },
   ];
   
   isContasAtivo = false;

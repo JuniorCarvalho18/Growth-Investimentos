@@ -1,11 +1,13 @@
--- create database growth;
+CREATE DATABASE IF NOT EXISTS growth;
+USE growth;
+
 create table admin(
     id INT AUTO_INCREMENT PRIMARY KEY,
     maskid int(100) NOT NULL,
     senha VARCHAR(255) NOT NULL
 );
 
-create table usuario(
+create table usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cnpj VARCHAR(18) NOT NULL,
@@ -67,7 +69,7 @@ CREATE TABLE resgates (
 
 CREATE TABLE notificacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
+    usuarios_id INT NOT NULL,
     tipo VARCHAR(50), 
     mensagem TEXT,
     data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,

@@ -18,30 +18,32 @@
     <!-- Formulário de cadastro -->
     <ion-item lines="none" style="--ion-item-background: transparent;">
       <ion-label position="stacked">Nome Completo</ion-label>
-      <ion-input type="text" placeholder="Digite seu nome completo"></ion-input>
+      <ion-input type="text" placeholder="Digite seu nome completo" [(ngModel)]="cadastro.nome"></ion-input>
     </ion-item>
 
     <ion-item lines="none" style="--ion-item-background: transparent;">
       <ion-label position="stacked">E-mail</ion-label>
-      <ion-input type="email" placeholder="Digite seu e-mail"></ion-input>
+      <ion-input type="email" placeholder="Digite seu e-mail" [(ngModel)]="cadastro.email"></ion-input>
     </ion-item>
 
     <ion-item lines="none" style="--ion-item-background: transparent;">
       <ion-label position="stacked">CNPJ</ion-label>
-      <ion-input type="text" placeholder="Digite seu CNPJ"></ion-input>
+      <ion-input type="text" placeholder="Digite seu CNPJ" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" 
+      maxlength="18"
+      inputmode="numeric" [(ngModel)]="cadastro.cnpj"></ion-input>
     </ion-item>
 
     <ion-item lines="none" style="--ion-item-background: transparent;">
       <ion-label position="stacked">Senha</ion-label>
-      <ion-input type="password" placeholder="Digite sua senha"></ion-input>
+      <ion-input type="password" placeholder="Digite sua senha" [(ngModel)]="cadastro.senha"></ion-input>
     </ion-item>
 
     <ion-item lines="none" style="--ion-item-background: transparent;">
       <ion-label position="stacked">Confirmar Senha</ion-label>
-      <ion-input type="password" placeholder="Confirme sua senha"></ion-input>
+      <ion-input type="password" placeholder="Confirme sua senha" [(ngModel)]="cadastro.confirmarSenha"></ion-input>
     </ion-item>
 
     <!-- Botão de cadastro -->
-    <ion-button id="Cadastrar" expand="block" style="margin-top: 20px; ">Cadastrar</ion-button>
+    <ion-button id="Cadastrar" expand="block" style="margin-top: 20px;" (click)="cadastrar()">Cadastrar</ion-button>
   </div>
 </ion-content>
