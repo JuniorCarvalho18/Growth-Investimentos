@@ -8,6 +8,9 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+ html{
+  scroll-behavior: smooth;
+ }
  * { font-family: 'Roboto', sans-serif; }
  ion-toolbar {--background: #232323;}
  ion-toolbar {color: var(--ion-text-color);}
