@@ -5,15 +5,128 @@
     </ion-buttons>
     <ion-title>Growth Investimentos</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer;padding-right: 10px;"></ion-icon>
+      <ion-icon name="notifications-outline" class="notification-icon"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="custom-content">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Growth Investimentos</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Saudação -->
+  <div class="greeting">
+    <p>Olá, [Nome]!</p>
+    <p>Veja o status atual da sua conta</p>
+  </div>
+
+  <!-- Projetos em Destaque -->
+  <div class="section destaque">
+    <h2>Projetos em Destaque</h2>
+    <div class="tags">
+      <div class="tag">
+        <ion-icon name="trophy-outline"></ion-icon>
+        <span>Top 5</span>
+      </div>
+      <div class="tag">
+        <ion-icon name="leaf-outline"></ion-icon>
+        <span>Mais Sustentáveis</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Destaques de Projetos Sustentáveis -->
+  <div class="section destaques-projetos">
+    <h2>Destaques de Projetos Sustentáveis</h2>
+    <div class="projeto">
+      <div class="badge">Sustentável</div>
+      <div class="imagem">
+        <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+      </div>
+      <p>Projeto 1</p>
+      <p>Data de Início: DD/MM/AAAA</p>
+      <ion-button expand="block" class="investir">Investir</ion-button>
+    </div>
+    <div class="projeto">
+      <div class="badge">Sustentável</div>
+      <div class="imagem">
+        <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+      </div>
+      <p>Projeto 2</p>
+      <p>Data de Início: DD/MM/AAAA</p>
+      <ion-button expand="block" class="investir">Investir</ion-button>
+    </div>
+  </div>
+
+  <!-- Projetos Sustentáveis -->
+  <div class="section projetos-sustaveis">
+    <h2>Projetos Sustentáveis</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="imagem">
+          <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+        </div>
+        <p>Projeto 1</p>
+        <p>Breve descrição do projeto</p>
+        <ion-button expand="block" class="investir">Investir</ion-button>
+      </div>
+      <div class="card">
+        <div class="imagem">
+          <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+        </div>
+        <p>Projeto 2</p>
+        <p>Breve descrição do projeto</p>
+        <ion-button expand="block" class="investir">Investir</ion-button>
+      </div>
+      <div class="card">
+        <div class="imagem">
+          <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+        </div>
+        <p>Projeto 3</p>
+        <p>Breve descrição do projeto</p>
+        <ion-button expand="block" class="investir">Investir</ion-button>
+      </div>
+      <div class="card">
+        <div class="imagem">
+          <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+        </div>
+        <p>Projeto 4</p>
+        <p>Breve descrição do projeto</p>
+        <ion-button expand="block" class="investir">Investir</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Avaliações dos Cotistas -->
+  <div class="section avaliacoes">
+    <h2>Avaliações dos Cotistas</h2>
+    <div class="avaliacao">
+      <p><strong>CoitistaFeliz99</strong> ⭐⭐⭐⭐⭐</p>
+      <p>O projeto tem trazido muitos retornos!</p>
+      <p>👍 💬</p>
+    </div>
+  </div>
+
+  <!-- Posts da Comunidade -->
+  <div class="section posts-comunidade">
+    <h2>Posts da Comunidade</h2>
+    <div class="post">
+      <p><strong>ApoiadorSocial1</strong> - 2h, New York</p>
+      <div class="imagem-post">
+        <ion-icon name="image-outline" class="placeholder-icon"></ion-icon>
+      </div>
+      <p>Empolgado com minha nova aquisição!</p>
+      <p>Comunidade Prêmios</p>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="fixed-button">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

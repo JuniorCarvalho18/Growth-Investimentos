@@ -1,0 +1,149 @@
+.custom-content {
+  background-color: var(--ion-background-color);
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+  padding: 16px;
+}
+
+.notification-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding-right: 10px;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.greeting p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.greeting p:nth-child(2) {
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 4px;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.destaque h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.destaque .tags {
+  display: flex;
+  gap: 8px;
+}
+
+.destaque .tags .tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--ion-text-color); /* Substituído para usar a variável */
+  padding: 6px 12px;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 14px;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.destaques-projetos h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.projeto {
+  background-color: var(--ion-background-color);
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.projeto .badge {
+  background-color: #045D56;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.projeto .imagem {
+  background-color: #003300;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.projeto p {
+  margin: 4px 0;
+  color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.investir {
+  --background: var(--dourado);
+  --color: var(--ion-text-color); /* Substituído para usar a variável */
+  font-size: 14px;
+}
+
+.fixed-button {
+  --background: #000;
+  --color: var(--ion-text-color); /* Substituído para usar a variável */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 16px;
+}
+
+.card {
+  background-color: var(--ion-background-color);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card .imagem {
+  background-color: #003300;
+  height: 100px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+  color: var(--ion-text-color);
+}
+
+.imagem-post {
+  background-color: #003300; /* Fundo verde escuro */
+  height: 120px; /* Altura do quadrado */
+  width: 120px; /* Largura do quadrado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* Bordas arredondadas */
+  margin: 16px auto; /* Centraliza o elemento */
+}
+
+.placeholder-icon {
+  font-size: 48px; /* Tamanho do ícone */
+  color: var(--ion-text-color); /* Cor do ícone */
+}
