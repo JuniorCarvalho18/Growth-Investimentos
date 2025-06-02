@@ -16,4 +16,7 @@ export class ConfigaracaoPage implements OnInit {
   add(){
     this.rota.navigate(['/dev']);
   }
+  goToProfile() {
+    this.rota.navigate(['/profile']); 
+  }
 }

@@ -1,4 +1,3 @@
-
 ion-menu.md ion-content {
     --padding-start: 8px;
     --padding-end: 8px;
@@ -86,3 +85,16 @@ ion-menu.md ion-content {
   ion-item.selected {
     --color: var(--ion-color-primary);
   }
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Alinha os botões verticalmente */
+  gap: 10px; /* Espaçamento entre os botões */
+  padding: 16px; /* Adiciona padding ao redor dos botões */
+}
+
+ion-button {
+  --background: var(--ion-background-color); /* Fundo do botão */
+  --color: var(--ion-text-color); /* Cor do texto */
+  font-size: 16px; /* Tamanho do texto */
+}

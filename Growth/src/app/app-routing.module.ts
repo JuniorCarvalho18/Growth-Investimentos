@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'verificacao',
     loadChildren: () => import('./verificacao/verificacao.module').then( m => m.VerificacaoPageModule)
   },
+  {
+    path: 'addproj',
+    loadChildren: () => import('./addproj/addproj.module').then( m => m.AddprojPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 
 @NgModule({

@@ -1,16 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Configurações</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-menu-toggle auto-hide="false">
-      <ion-buttons style="width: 100%;">
-        <ion-button  style="width: 100%;" (click)="add()">
-          <ion-icon style="font-size: 40px;margin-right: 10px;" name="code-working-outline"></ion-icon>
-          <ion-label>Desenvolvedores</ion-label>
-        </ion-button>
-      </ion-buttons>
-    </ion-menu-toggle>
+  <ion-menu-toggle auto-hide="false">
+    <div class="button-container">
+      <!-- Botão para Perfil do Usuário -->
+      <ion-button expand="block" (click)="goToProfile()">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil do Usuário</ion-label>
+      </ion-button>
+
+      <!-- Botão para Desenvolvedores -->
+      <ion-button expand="block" (click)="add()">
+        <ion-icon slot="start" name="code-working-outline"></ion-icon>
+        <ion-label>Desenvolvedores</ion-label>
+      </ion-button>
+    </div>
+  </ion-menu-toggle>
 </ion-content>
