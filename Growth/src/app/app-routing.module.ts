@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'projetos',
     loadChildren: () => import('./projetos/projetos.module').then( m => m.ProjetosPageModule)
   },
+  {
+    path: 'marketplace',
+    loadChildren: () => import('./marketplace/marketplace.module').then( m => m.MarketplacePageModule)
+  },
 ];
 
 @NgModule({

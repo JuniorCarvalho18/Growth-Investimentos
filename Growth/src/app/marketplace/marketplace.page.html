@@ -1,0 +1,120 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Marketplace</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" class="notification-icon" (click)="openNotificationsModal()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Marketplace</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Campo de busca -->
+  <div class="search-container">
+    <ion-searchbar placeholder="Buscar"></ion-searchbar>
+    <p>Explore e resgate recompensa com tokens</p>
+  </div>
+
+  <!-- Categorias -->
+  <div class="categories">
+    <h3>Categorias</h3>
+    <div class="category-buttons">
+      <ion-button expand="block" class="category-button">
+        <ion-icon name="trophy-outline"></ion-icon>
+        Conquistas
+      </ion-button>
+      <ion-button expand="block" class="category-button">
+        <ion-icon name="gift-outline"></ion-icon>
+        Prêmios
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Prêmios patrocinados -->
+  <div class="sponsored-rewards">
+    <h3>Prêmios patrocinados</h3>
+    <div class="reward-card">
+      <h4>Tech Collection</h4>
+      <p class="category">Tecnologia</p>
+      <p>Explore o mundo da tecnologia renovável com o nosso curso de treinamento!</p>
+      <p class="sponsor">Team Growth Investimentos</p>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- Painel de opções de recompensa -->
+    <div class="reward-options">
+      <ion-row class="reward-row">
+        <div class="reward-option">
+          <ion-icon name="construct-outline"></ion-icon>
+          <p>Novo</p>
+          <p>Equipamentos</p>
+          <p>100 tokens</p>
+        </div>
+        <div class="reward-option">
+          <ion-icon name="pricetag-outline"></ion-icon>
+          <p>Limitado</p>
+          <p>Desconto com provedor</p>
+          <p>200 tokens</p>
+        </div>
+        <div class="reward-option">
+          <ion-icon name="star-outline"></ion-icon>
+          <p>Exclusivo</p>
+          <p>Plano VIP</p>
+          <p>500 tokens</p>
+        </div>
+        <div class="reward-option">
+          <ion-icon name="gift-outline"></ion-icon>
+          <p>Popular</p>
+          <p>Pacote de Prêmios</p>
+          <p>300 tokens</p>
+        </div>
+      </ion-row>
+    </div>
+  </div>
+
+  <!-- Recentemente apoiados -->
+  <div class="recently-supported">
+    <h3>Recentemente apoiados</h3>
+    <div class="support-item">
+      <ion-avatar>
+        <img src="" />
+      </ion-avatar>
+      <div class="separator"></div>
+      <div>
+        <p>John Doe</p>
+        <p>Apoiou a Empresa de Automotivos elétricos</p>
+        <p>Há 2 dias</p>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="support-item">
+      <ion-avatar>
+        <img src="" />
+      </ion-avatar>
+      <div>
+        <p>Jane Smith</p>
+        <p>Conquistou um plano vitalício de aluguel de painéis solares</p>
+        <p>Há 3 dias</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão de ação -->
+  <ion-button expand="block" class="action-button">Reivindicar agora</ion-button>
+
+  <!-- Modal de Notificações -->
+  <ion-modal [isOpen]="isNotificationsModalOpen" (didDismiss)="closeNotificationsModal()" class="notifications-modal">
+    <ng-template>
+      <app-notificacoes></app-notificacoes>
+    </ng-template>
+  </ion-modal>
+</ion-content>
