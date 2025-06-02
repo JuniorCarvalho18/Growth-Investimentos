@@ -13,4 +13,36 @@
       <ion-title size="large">Perfil do Usuário</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="profile-container">
+    <!-- Foto do Usuário -->
+    <div class="profile-photo">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </div>
+
+    <!-- Informações do Usuário -->
+    <ion-item>
+      <ion-label position="stacked">Nome:</ion-label>
+      <ion-input [(ngModel)]="user.name" placeholder="Digite seu nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">CNPJ:</ion-label>
+      <ion-input [(ngModel)]="user.email" type="email" placeholder="Digite seu e-mail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">E-mail:</ion-label>
+      <ion-input [(ngModel)]="user.email" type="email" placeholder="Digite seu e-mail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Senha:</ion-label>
+      <ion-input [(ngModel)]="user.password" type="password" placeholder="Digite sua senha"></ion-input>
+    </ion-item>
+
+
+    <!-- Botão para salvar alterações -->
+    <ion-button expand="block" (click)="saveProfile()">Salvar Alterações</ion-button>
+  </div>
 </ion-content>

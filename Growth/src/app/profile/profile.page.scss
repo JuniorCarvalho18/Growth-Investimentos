@@ -1,0 +1,25 @@
+/* filepath: /C:/GitHub/GrowthInvestimentos/Growth/src/app/profile/profile.page.scss */
+.profile-container {
+  padding: 16px;
+}
+
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.profile-photo ion-icon {
+  font-size: 100px;
+  color: var(--ion-text-color);
+}
+
+ion-item {
+  margin-bottom: 16px;
+}
+
+ion-button {
+  --background: var(--dourado);
+  --color: var(--ion-text-color);
+}

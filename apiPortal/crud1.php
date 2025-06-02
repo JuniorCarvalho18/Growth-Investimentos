@@ -5,6 +5,29 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 include_once('connection.php');
 
+// Cria o administrador padrão
+try {
+    // Verifica se o administrador já existe
+    $query = $pdo->prepare("SELECT * FROM admin WHERE maskid = :maskid");
+    $query->bindValue(':maskid', 1); // Verifica pelo identificador padrão
+    $query->execute();
+
+    if ($query->rowCount() == 0) {
+        // Insere o administrador padrão
+        $query = $pdo->prepare("INSERT INTO admin (maskid, nome, senha) VALUES (:maskid, :nome, :senha)");
+        $query->bindValue(':maskid', 1); // Define o identificador padrão como 1
+        $query->bindValue(':nome', 'admin');
+        $query->bindValue(':senha', '0000'); // Insere a senha sem criptografia
+        $query->execute();
+
+        echo json_encode(['success' => true, 'message' => 'Administrador padrão criado com sucesso!']);
+    } else {
+        echo json_encode(['success' => true, 'message' => 'Administrador padrão já existe!']);
+    }
+} catch (PDOException $e) {
+    echo json_encode(['success' => false, 'message' => 'Erro ao criar administrador: ' . $e->getMessage()]);
+}
+
 // Decodifica o JSON recebido no corpo da requisição
 $postjson = json_decode(file_get_contents('php://input'), true);
 
