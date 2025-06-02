@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-usuarios',
@@ -13,34 +15,72 @@ usuario: string = "";
 cnpj: string = "";
 email: string = "";
 senha: string = "";
+  usuarios: any[] = [];
+  usuario = { id: null, nome: '', email: '', senha: '', cnpj: '' };
+  apiUrl = 'http://localhost/seu_projeto/crud1.php';
 
-
-
-  carregar(){
-  }
-
-
-  constructor(private rota:Router, private actRouter: ActivatedRoute, public toastController: ToastController, /*private provider: Post */) 
-  { }
+  constructor(
+    private http: HttpClient,
+    private toast: ToastController,
+    private alert: AlertController
+  ) {}
 
   ngOnInit() {
-    /* this.actRouter.params.subscribe((data: any) => {
-      this.id = data.id;
-      this.nome = data.nome;
-      this.cnpj = data.cnpj;
-      this.email = data.email;
-      this.senha = data.senha;
-    })*/
-  } 
+    this.listarUsuarios();
+  }
 
-    async mensagemsalvar(){
-      const toast = await this.toastController.create({
-        message: 'Usuário salvo com sucesso',
-        duration: 2000,
-        color: 'success',
-        position: 'top',
-      });
-      toast.present();
+  async presentToast(msg: string) {
+    const toast = await this.toast.create({ message: msg, duration: 2000 });
+    toast.present();
+  }
 
-    }
+  listarUsuarios() {
+    this.http.post<any>(this.apiUrl, { requisicao: 'listar' }).subscribe(res => {
+      if (res.success) {
+        this.usuarios = res.usuarios;
+      }
+    });
+  }
+
+  salvarUsuario() {
+    const requisicao = this.usuario.id ? 'editar' : 'salvar';
+    const payload = {
+      requisicao,
+      id: this.usuario.id,
+      nome: this.usuario.nome,
+      email: this.usuario.email,
+      senha: this.usuario.senha,
+      cnpj: this.usuario.cnpj,
+    };
+
+    this.http.post(this.apiUrl, payload).subscribe(() => {
+      this.presentToast(requisicao === 'salvar' ? 'Usuário salvo!' : 'Usuário editado!');
+      this.usuario = { id: null, nome: '', email: '', senha: '', cnpj: '' };
+      this.listarUsuarios();
+    });
+  }
+
+  editar(u: any) {
+    this.usuario = { ...u, senha: '' }; // senha vazia por segurança
+  }
+
+  async deletar(id: number) {
+    const alert = await this.alert.create({
+      header: 'Confirmar',
+      message: 'Deseja excluir este usuário?',
+      buttons: [
+        { text: 'Cancelar', role: 'cancel' },
+        {
+          text: 'Excluir',
+          handler: () => {
+            this.http.post(this.apiUrl, { requisicao: 'deletar', id }).subscribe(() => {
+              this.presentToast('Usuário excluído!');
+              this.listarUsuarios();
+            });
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
 }

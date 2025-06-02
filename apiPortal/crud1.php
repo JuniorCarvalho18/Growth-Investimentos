@@ -5,53 +5,68 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 include_once('connection.php');
 
-// Decodifica o JSON recebido no corpo da requisição
 $postjson = json_decode(file_get_contents('php://input'), true);
 
-// Verifica se o JSON foi recebido corretamente
 if (!$postjson) {
     echo json_encode(['success' => false, 'message' => 'Nenhum dado recebido']);
     exit;
 }
 
-// Verifica se a requisição é para salvar
+// ✅ CRIAR (Salvar)
 if ($postjson['requisicao'] == 'salvar') {
-            // Criptografa a senha
-        $senha_crip = md5($postjson['senha']);
+    $senha_crip = md5($postjson['senha']);
+    $query = $pdo->prepare("INSERT INTO usuarios (senha, nome, email, cnpj) 
+                            VALUES (:senha, :nome, :email, :cnpj)");
+    $query->bindValue(':senha', $senha_crip);
+    $query->bindValue(':nome', $postjson['nome']);
+    $query->bindValue(':email', $postjson['email']);
+    $query->bindValue(':cnpj', $postjson['cnpj']);
+    $query->execute();
 
-        // Prepara a query para inserir os dados
-        $query = $pdo->prepare("INSERT INTO usuarios (senha, nome, email, cnpj) 
-                                VALUES (:senha, :nome, :email, :cnpj)");
-        $query->bindValue(':senha', $senha_crip);
-        $query->bindValue(':nome', $postjson['nome']);
-        $query->bindValue(':email', $postjson['email']);
-        $query->bindValue(':cnpj', $postjson['cnpj']);
-        $query->execute();
-
-        // Obtém o último ID inserido
     $id = $pdo->lastInsertId();
+    echo json_encode(['success' => $query->rowCount() > 0, 'id' => $id]);
+}
 
-    // Verifica se a query foi executada com sucesso
-    if ($query->rowCount() > 0) {
-        $result = array('success' => true, 'id' => $id);
-    } else {
-        $result = array('success' => false);
-    }
+// ✅ LOGIN
+else if ($postjson['requisicao'] == 'login') {
+    $senha_crip = md5($postjson['senha']);
+    $query = $pdo->prepare("SELECT * FROM usuarios WHERE (email = :emailCnpj OR cnpj = :emailCnpj) AND senha = :senha");
+    $query->bindValue(':emailCnpj', $postjson['emailCnpj']);
+    $query->bindValue(':senha', $senha_crip);
+    $query->execute();
 
-    // Retorna o resultado como JSON
-    echo json_encode($result);
-    }
+    echo json_encode([
+        'success' => $query->rowCount() > 0,
+        'message' => $query->rowCount() > 0 ? 'Login realizado com sucesso!' : 'E-mail/CNPJ ou senha inválidos!'
+    ]);
+}
 
-// Verifica se a requisição é para login
-if ($postjson['requisicao'] == 'login') {
-    try {
-        $senha_crip = md5($postjson['senha']); // Criptografa a senha
+// ✅ LISTAR
+else if ($postjson['requisicao'] == 'listar') {
+    $query = $pdo->prepare("SELECT * FROM usuarios ORDER BY id DESC");
+    $query->execute();
+    $dados = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        // Prepara a query para verificar o login
-        $query = $pdo->prepare("SELECT * FROM usuarios WHERE (email = :emailCnpj OR cnpj = :emailCnpj) AND senha = :senha");
-        $query->bindValue(':emailCnpj', $postjson['emailCnpj']);
-        $query->bindValue(':senha', $senha_crip);
-        $query->execute();
+    echo json_encode(['success' => true, 'usuarios' => $dados]);
+}
+
+// ✅ EDITAR
+else if ($postjson['requisicao'] == 'editar') {
+    $query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cnpj = :cnpj WHERE id = :id");
+    $query->bindValue(':nome', $postjson['nome']);
+    $query->bindValue(':email', $postjson['email']);
+    $query->bindValue(':cnpj', $postjson['cnpj']);
+    $query->bindValue(':id', $postjson['id']);
+    $query->execute();
+
+    echo json_encode(['success' => $query->rowCount() > 0]);
+}
+
+// ✅ DELETAR
+else if ($postjson['requisicao'] == 'deletar') {
+    $query = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+    $query->bindValue(':id', $postjson['id']);
+    $query->execute();
 
         if ($query->rowCount() > 0) {
             echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);

@@ -1,12 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-title>Usuários</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ usuario.id ? 'Editar' : 'Cadastrar' }} Usuário</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="Nome" [(ngModel)]="usuario.nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Email" [(ngModel)]="usuario.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Senha" type="password" [(ngModel)]="usuario.senha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="CNPJ" [(ngModel)]="usuario.cnpj"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="salvarUsuario()">
+        {{ usuario.id ? 'Atualizar' : 'Salvar' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let u of usuarios">
+      <ion-label>
+        <h2>{{ u.nome }}</h2>
+        <p>{{ u.email }} | {{ u.cnpj }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="primary" (click)="editar(u)">
+        Editar
+      </ion-button>
+      <ion-button fill="clear" color="danger" (click)="deletar(u.id)">
+        Excluir
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
