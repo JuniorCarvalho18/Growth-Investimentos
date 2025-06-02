@@ -14,8 +14,9 @@ try {
 
     if ($query->rowCount() == 0) {
         // Insere o administrador padrão
-        $query = $pdo->prepare("INSERT INTO admin (maskid, senha) VALUES (:maskid, :senha)");
+        $query = $pdo->prepare("INSERT INTO admin (maskid, nome, senha) VALUES (:maskid, :nome, :senha)");
         $query->bindValue(':maskid', 1); // Define o identificador padrão como 1
+        $query->bindValue(':nome', 'admin');
         $query->bindValue(':senha', '0000'); // Insere a senha sem criptografia
         $query->execute();
 
