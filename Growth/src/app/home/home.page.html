@@ -19,7 +19,7 @@
 
   <!-- Saudação -->
   <div class="greeting">
-    <p>Olá, {{ userName }}!</p> <!-- Exibe o nome do usuário -->
+    <p>Olá, name!</p> 
   </div>
 
   <!-- Projetos em Destaque -->
@@ -130,9 +130,9 @@
   </ion-fab>
 
   <!-- Modal -->
-  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()" class="fullscreen-modal">
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()" class="fullscreen-modal" style=" bottom: -200px;">
     <ng-template>
-      <app-addproj></app-addproj>
+      <app-addproj class="ion-page"></app-addproj>
     </ng-template>
   </ion-modal>
 

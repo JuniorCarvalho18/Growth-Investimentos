@@ -16,8 +16,6 @@ export class HomePage implements OnInit {
   constructor(private rota: Router, private http: HttpClient) {}
 
   ngOnInit() {
-    // Inicializações necessárias
-    this.loadUserName(); // Carrega o nome do usuário ao iniciar a página
   }
 
   openAddProjectModal() {
@@ -36,18 +34,4 @@ export class HomePage implements OnInit {
     this.isNotificationsModalOpen = false; // Fecha o modal de notificações
   }
 
-  loadUserName() {
-    const userId = 'id_do_usuario_logado'; // Substitua pelo ID do usuário logado
-    const apiUrl = `https://sua-api.com/usuarios/${userId}`; // URL da API para buscar os dados do usuário
-
-    this.http.get(apiUrl).subscribe(
-      (data: any) => {
-        this.userName = data.name; // Define o nome do usuário
-      },
-      (error) => {
-        console.error('Erro ao carregar nome do usuário:', error);
-        this.userName = 'Usuário'; // Define um valor padrão em caso de erro
-      }
-    );
-  }
 }

@@ -150,14 +150,18 @@ h2 {
 }
 
 .fullscreen-modal {
+  position: absolute; /* Define a posição absoluta */
+  bottom: -60px; /* Fixa o modal na parte inferior */
+  left: 0;
+  right: 0;
   --width: 100%; /* Largura total da tela */
-
-  --border-radius: 16px; /* Remove bordas arredondadas */
-  --transform: translateY(100%); /* Começa fora da tela */
-  animation: slide-up 0.2s ease-out forwards; /* Animação para subir */
-  padding: 0; /* Remove padding do modal */
+  --border-radius: 16px 16px 0 0; /* Bordas arredondadas apenas no topo */
+  --background: var(--ion-background-color); /* Fundo do modal */
+  animation: slide-up 0.2s ease-out forwards; /* Animação para crescer para cima */
 }
-
+.ion-page{
+  display: block;
+}
 .notifications-modal {
   --width: 90%; /* Largura do modal */
   --height: 70%; /* Altura do modal */
@@ -168,7 +172,7 @@ h2 {
 
 @keyframes slide-up {
   from {
-    transform: translateY(100%); /* Começa fora da tela */
+    transform: translateY(100%); /* Começa fora da tela, abaixo */
   }
   to {
     transform: translateY(0); /* Fica visível */
