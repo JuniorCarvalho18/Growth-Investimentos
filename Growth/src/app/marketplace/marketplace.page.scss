@@ -87,29 +87,40 @@ display: flex;
   flex-wrap: nowrap;
   overflow-x: auto; /* Permite rolagem horizontal */
   scroll-snap-type: x mandatory; /* Configura o comportamento de snap para carrossel */
+  cursor: grab; /* Estiliza o cursor como "mão aberta" */
+  -webkit-overflow-scrolling: touch; /* Suaviza a rolagem em dispositivos móveis */
+}
+
+.reward-options.active {
+  cursor: grabbing; /* Estiliza o cursor como "mão fechada" durante o arraste */
+}
+
+.reward-options::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem no Chrome, Safari e Edge */
 }
 
 .reward-option {
   background-color: #23252480; /* Fundo com 50% de transparência */
-  padding: 24px; /* Aumenta o espaço interno */
-  border-radius: 12px; /* Bordas mais arredondadas */
+  padding: 24px; /* Espaço interno */
+  border-radius: 12px; /* Bordas arredondadas */
   text-align: center;
   margin: 0 28px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais destacada */
   flex: 0 0 auto; /* Impede que os itens se redimensionem */
-  width: 200px; /* Aumenta a largura dos itens */
+  width: 200px; /* Largura fixa */
+  scroll-snap-align: center; /* Centraliza os itens no carrossel */
 }
 
 .reward-option p {
-  font-size: 16px; /* Aumenta o tamanho do texto */
-  margin: 8px 0; /* Aumenta o espaçamento entre os textos */
+  font-size: 16px; /* Tamanho do texto */
+  margin: 8px 0; /* Espaçamento entre os textos */
   color: var(--ion-text-color);
 }
 
 .reward-option ion-icon {
   font-size: 32px; /* Ícones maiores */
   color: var(--dourado);
-  margin-bottom: 12px; /* Aumenta o espaçamento abaixo do ícone */
+  margin-bottom: 12px; /* Espaçamento abaixo do ícone */
 }
 
 .recently-supported {
