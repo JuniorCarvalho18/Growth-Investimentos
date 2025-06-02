@@ -1,0 +1,55 @@
+/* filepath: /C:/GitHub/GrowthInvestimentos/Growth/src/app/notificacoes/notificacoes.page.scss */
+ion-toolbar {
+    text-align: center;
+  --background: #004d40; /* Fundo verde escuro */
+  --color: var(--ion-text-color); /* Texto branco */
+}
+ion-content {
+  --background: #232323; /* Fundo escuro */
+  --color: var(--ion-text-color); /* Texto branco */
+}
+.notifications-content {
+  padding: 0;
+  background-color: #232323; /* Fundo escuro */
+  border-radius: 16px; /* Bordas arredondadas */
+  margin: 16px; /* Espaçamento ao redor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.notifications-header {
+  background-color: #004d40; /* Fundo verde escuro */
+  color: #ffffff; /* Texto branco */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #232323; /* Fundo dos itens */
+}
+
+.notification-icon {
+  font-size: 40px;
+  margin-right: 16px;
+  color: #e91e63; /* Cor do ícone */
+}
+
+.notification-text h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff; /* Texto branco */
+}
+
+.notification-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #b0b0b0; /* Texto cinza claro */
+}
+
+.separator {
+  height: 1px;
+  background-color: #004d40; /* Linha separadora verde escuro */
+  margin: 0 16px;
+}

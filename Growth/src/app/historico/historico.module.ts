@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { HistoricoPageRoutingModule } from './historico-routing.module';
 
 import { HistoricoPage } from './historico.page';
+import { NotificacoesPageModule } from '../notificacoes/notificacoes.module'; // Importação do módulo NotificacoesPage
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HistoricoPageRoutingModule
+    HistoricoPageRoutingModule,
+    NotificacoesPageModule, // Adicionado para usar o modal de notificações
   ],
-  declarations: [HistoricoPage]
+  declarations: [HistoricoPage],
 })
 export class HistoricoPageModule {}

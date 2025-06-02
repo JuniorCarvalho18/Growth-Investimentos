@@ -5,17 +5,17 @@
     </ion-buttons>
     <ion-title>Histórico</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;"></ion-icon>
+      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;" (click)="openNotificationsModal()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="historico-container">
+<div class="historico-container">
     <!-- Lista de Depósitos Realizados -->
-    <h3 class="section-title">Lista de Depósitos Realizados</h3>
-    <div class="historico-item">
-      <ion-icon name="cash-outline"></ion-icon>
+  <h3 class="section-title">Lista de Depósitos Realizados</h3>
+  <div class="historico-item">
+    <ion-icon name="cash-outline"></ion-icon>
       <div>
         <p>Investimento 20/12/2021</p>
         <p>Valor: R$50</p>
@@ -23,16 +23,16 @@
     </div>
     <div class="historico-item">
       <ion-icon name="cash-outline"></ion-icon>
-      <div>
+    <div>
         <p>Investimento 12/01/2022</p>
         <p>Valor: R$70</p>
       </div>
-    </div>
+  </div>
 
-    <!-- Lista de Investimentos Realizados -->
-    <h3 class="section-title">Lista de Investimentos Realizados</h3>
-    <div class="historico-item">
-      <ion-icon name="cash-outline"></ion-icon>
+<!-- Lista de Investimentos Realizados -->
+  <h3 class="section-title">Lista de Investimentos Realizados</h3>
+  <div class="historico-item">
+    <ion-icon name="cash-outline"></ion-icon>
       <div>
         <p>Investimento 1</p>
         <p>Rendimento: R$50</p>
@@ -105,4 +105,11 @@
       <span>08/10/2021</span>
     </div>
   </div>
+
+  <!-- Modal de Notificações -->
+  <ion-modal [isOpen]="isNotificationsModalOpen" (didDismiss)="closeNotificationsModal()" class="notifications-modal">
+    <ng-template>
+      <app-notificacoes></app-notificacoes>
+    </ng-template>
+  </ion-modal>
 </ion-content>

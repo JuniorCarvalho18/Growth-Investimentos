@@ -8,10 +8,18 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class HistoricoPage implements OnInit {
+  isNotificationsModalOpen = false; // Controla o estado do modal de notificações
 
   constructor(private rota:Router) { }
 
   ngOnInit() {
   }
 
+  openNotificationsModal() {
+    this.isNotificationsModalOpen = true; // Abre o modal de notificações
+  }
+
+  closeNotificationsModal() {
+    this.isNotificationsModalOpen = false; // Fecha o modal de notificações
+  }
 }

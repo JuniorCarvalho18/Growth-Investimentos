@@ -4,16 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
-import { AddprojPageModule } from '../addproj/addproj.module'; // Importação do módulo AddprojPage
-
+import { AddprojPageModule } from '../addproj/addproj.module'; 
+import { NotificacoesPageModule } from '../notificacoes/notificacoes.module'; 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    AddprojPageModule, // Importação do módulo
+    AddprojPageModule,
+    NotificacoesPageModule,
   ],
-  declarations: [HomePage], // Apenas HomePage deve ser declarado aqui
+  declarations: [HomePage,], 
 })
 export class HomePageModule {}

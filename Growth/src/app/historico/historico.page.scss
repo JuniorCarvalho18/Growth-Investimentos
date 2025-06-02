@@ -38,3 +38,20 @@
     font-size: 12px;
     color: var(ion-text-color); 
   }
+
+.notifications-modal {
+  --width: 90%; /* Largura do modal */
+  --height: 70%; /* Altura do modal */
+  --border-radius: 16px; /* Bordas arredondadas */
+  --background: var(--ion-background-color); /* Fundo do modal */
+  animation: slide-down 0.2s ease-out forwards; /* Animação para descer */
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%); /* Começa fora da tela, acima */
+  }
+  to {
+    transform: translateY(0); /* Fica visível */
+  }
+}

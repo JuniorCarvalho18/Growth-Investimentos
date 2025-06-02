@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-saldo',
   templateUrl: './saldo.page.html',
   styleUrls: ['./saldo.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class SaldoPage implements OnInit {
+  isNotificationsModalOpen = false; // Controla o estado do modal de notificações
 
-  constructor(private rota:Router) { }
+  
+  constructor() { }
 
   ngOnInit() {
   }
+  
+  openNotificationsModal() {
+    this.isNotificationsModalOpen = true; // Abre o modal de notificações
+  }
 
+  closeNotificationsModal() {
+    this.isNotificationsModalOpen = false; // Fecha o modal de notificações
+  }
 }

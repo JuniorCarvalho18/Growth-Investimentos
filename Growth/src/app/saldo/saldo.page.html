@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>Saldo</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;"></ion-icon>
+      <ion-icon name="notifications-outline" style="font-size: 24px; cursor: pointer; padding-right: 10px;" (click)="openNotificationsModal()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -24,14 +24,21 @@
   </div>
 
   <h3 class="section-title">Resumo do Saldo de Tokens</h3>
-    <div class="resumo-cards">
-      <div class="resumo-card">
-          <h4>Saldo Total</h4>
-          <p>****</p>
-      </div>
-      <div class="resumo-card">
-          <h4>Investimentos em Andamento</h4>
-          <p></p>
-      </div>
+  <div class="resumo-cards">
+    <div class="resumo-card">
+      <h4>Saldo Total</h4>
+      <p>****</p>
     </div>
+    <div class="resumo-card">
+      <h4>Investimentos em Andamento</h4>
+      <p></p>
+    </div>
+  </div>
+
+  <!-- Modal de Notificações -->
+  <ion-modal [isOpen]="isNotificationsModalOpen" (didDismiss)="closeNotificationsModal()" class="notifications-modal">
+    <ng-template>
+      <app-notificacoes></app-notificacoes>
+    </ng-template>
+  </ion-modal>
 </ion-content>
