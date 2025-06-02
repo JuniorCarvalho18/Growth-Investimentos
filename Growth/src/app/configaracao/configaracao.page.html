@@ -10,17 +10,17 @@
 <ion-content [fullscreen]="true">
   <ion-menu-toggle auto-hide="false">
     <div class="button-container">
-      <!-- Botão para Perfil do Usuário -->
-      <ion-button expand="block" (click)="goToProfile()">
-        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        <ion-label>Perfil do Usuário</ion-label>
-      </ion-button>
 
-      <!-- Botão para Desenvolvedores -->
-      <ion-button expand="block" (click)="add()">
-        <ion-icon slot="start" name="code-working-outline"></ion-icon>
-        <ion-label>Desenvolvedores</ion-label>
-      </ion-button>
+        <ion-button expand="block" (click)="goToProfile()">
+          <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+          <ion-label>Perfil do Usuário</ion-label>
+        </ion-button>
+        
+        <ion-button expand="block" (click)="add()">
+          <ion-icon slot="start" name="code-working-outline"></ion-icon>
+          <ion-label>Desenvolvedores</ion-label>
+        </ion-button>
+
     </div>
   </ion-menu-toggle>
 </ion-content>

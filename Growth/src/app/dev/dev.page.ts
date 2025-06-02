@@ -16,4 +16,7 @@ export class DevPage implements OnInit {
   add1(){
     this.rota.navigate(['/usuarios']);
   }
+  add2(){
+    this.rota.navigate(['/projetos']);
+  }
 }
