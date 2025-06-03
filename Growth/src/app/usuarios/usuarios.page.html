@@ -1,33 +1,26 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>Usuários</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-item>
+    <ion-input [(ngModel)]="usuario.nome" placeholder="Nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="usuario.email" placeholder="Email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="usuario.cnpj" placeholder="CNPJ"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!usuario.id">
+    <ion-input [(ngModel)]="usuario.senha" type="password" placeholder="Senha"></ion-input>
+  </ion-item>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{ usuario.id ? 'Editar' : 'Cadastrar' }} Usuário</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-input placeholder="Nome" [(ngModel)]="usuario.nome"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input placeholder="Email" [(ngModel)]="usuario.email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input placeholder="Senha" type="password" [(ngModel)]="usuario.senha"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input placeholder="CNPJ" [(ngModel)]="usuario.cnpj"></ion-input>
-      </ion-item>
-      <ion-button expand="full" (click)="salvarUsuario()">
-        {{ usuario.id ? 'Atualizar' : 'Salvar' }}
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  <ion-button expand="full" (click)="salvarUsuario()">
+    {{ usuario.id ? 'Atualizar' : 'Salvar' }}
+  </ion-button>
 
   <ion-list>
     <ion-item *ngFor="let u of usuarios">
@@ -35,13 +28,8 @@
         <h2>{{ u.nome }}</h2>
         <p>{{ u.email }} | {{ u.cnpj }}</p>
       </ion-label>
-      <ion-button fill="clear" color="primary" (click)="editar(u)">
-        Editar
-      </ion-button>
-      <ion-button fill="clear" color="danger" (click)="deletar(u.id)">
-        Excluir
-      </ion-button>
+      <ion-button color="warning" (click)="editar(u)">Editar</ion-button>
+      <ion-button color="danger" (click)="deletar(u.id)">Excluir</ion-button>
     </ion-item>
   </ion-list>
-
 </ion-content>

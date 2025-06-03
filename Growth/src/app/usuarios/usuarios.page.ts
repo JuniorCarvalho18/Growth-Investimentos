@@ -13,10 +13,10 @@ export class UsuariosPage implements OnInit {
 
   usuarios: any[] = [];
   usuario = { id: null, nome: '', email: '', senha: '', cnpj: '' };
-  apiUrl = 'http://localhost/seu_projeto/crud1.php';
+  apiUrl = 'http://localhost/phpmyadmin/crud1.php'; // Ajuste o caminho conforme necessário
 
   constructor(
-    private rota:Router,
+    private rota: Router,
     private http: HttpClient,
     private toast: ToastController,
     private alert: AlertController
@@ -41,14 +41,17 @@ export class UsuariosPage implements OnInit {
 
   salvarUsuario() {
     const requisicao = this.usuario.id ? 'editar' : 'salvar';
-    const payload = {
+    const payload: any = {
       requisicao,
       id: this.usuario.id,
       nome: this.usuario.nome,
       email: this.usuario.email,
-      senha: this.usuario.senha,
-      cnpj: this.usuario.cnpj,
+      cnpj: this.usuario.cnpj
     };
+
+    if (requisicao === 'salvar') {
+      payload.senha = this.usuario.senha;
+    }
 
     this.http.post(this.apiUrl, payload).subscribe(() => {
       this.presentToast(requisicao === 'salvar' ? 'Usuário salvo!' : 'Usuário editado!');
@@ -58,7 +61,7 @@ export class UsuariosPage implements OnInit {
   }
 
   editar(u: any) {
-    this.usuario = { ...u, senha: '' }; // senha vazia por segurança
+    this.usuario = { ...u, senha: '' }; // não carrega a senha
   }
 
   async deletar(id: number) {
