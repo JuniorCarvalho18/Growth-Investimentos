@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AlertController, ToastController } from '@ionic/angular';
 
@@ -11,15 +10,13 @@ import { AlertController, ToastController } from '@ionic/angular';
   standalone: false,
 })
 export class UsuariosPage implements OnInit {
-usuario: string = "";
-cnpj: string = "";
-email: string = "";
-senha: string = "";
+
   usuarios: any[] = [];
   usuario = { id: null, nome: '', email: '', senha: '', cnpj: '' };
   apiUrl = 'http://localhost/seu_projeto/crud1.php';
 
   constructor(
+    private rota:Router,
     private http: HttpClient,
     private toast: ToastController,
     private alert: AlertController

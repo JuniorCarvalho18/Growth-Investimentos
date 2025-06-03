@@ -64,17 +64,19 @@ else if ($postjson['requisicao'] == 'editar') {
 
 // ✅ DELETAR
 else if ($postjson['requisicao'] == 'deletar') {
-    $query = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
-    $query->bindValue(':id', $postjson['id']);
-    $query->execute();
+    try {
+        $query = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+        $query->bindValue(':id', $postjson['id']);
+        $query->execute();
 
         if ($query->rowCount() > 0) {
-            echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
+            echo json_encode(['success' => true, 'message' => 'Usuário excluído com sucesso!']);
         } else {
-            echo json_encode(['success' => false, 'message' => 'E-mail/CNPJ ou senha inválidos!']);
+            echo json_encode(['success' => false, 'message' => 'Usuário não encontrado!']);
         }
     } catch (PDOException $e) {
         echo json_encode(['success' => false, 'message' => 'Erro no servidor: ' . $e->getMessage()]);
     }
 }
+
 ?>
